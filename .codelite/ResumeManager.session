@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="/home/gsjy/src/php/resume/ResumeManager.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="/home/gsjy/src/php/resume/ResumeManager.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/test.php" Name="FileName"/>
+      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="46" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/DV_SimpleHeadings.php" Name="FileName"/>
+      <int Value="20" Name="FirstVisibleLine"/>
+      <int Value="22" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/DV_BlockViewBase.php" Name="FileName"/>
+      <int Value="75" Name="FirstVisibleLine"/>
+      <int Value="93" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/DV_Carousel.php" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/DV_Panel.php" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/CV_ProjectEntry.php" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/DV_ProjectView.php" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/entry.php" Name="FileName"/>
+      <int Value="52" Name="FirstVisibleLine"/>
+      <int Value="90" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/eg.json" Name="FileName"/>
+      <int Value="122" Name="FirstVisibleLine"/>
+      <int Value="155" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/gsjy/src/php/resume/simple_test.php" Name="FileName"/>
+      <int Value="9" Name="FirstVisibleLine"/>
+      <int Value="17" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

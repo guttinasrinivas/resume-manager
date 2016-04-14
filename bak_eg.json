@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Secure Tunnel for Virtual Data Pipeline",
+        "product": "Actifio Copy Data Storage",
+        "tools": [ "C++", "OpenSSL", "GNU Tool Chain", "Visual Studio 2012" ],
+        "platforms": [ "Embedded Linux", "SLES", "RHEL", "HPUX", "AIX", "Windows 2008R2", "Windows 2012", "Solaris" ],
+        "summary" : "Sample text goes here describing the project",
+        "accomplishments" : "Text with accomplishments goes here."
+    },
+    {
+        "title": "Secure Tunnel for Virtual Data Pipeline",
+        "product": "Actifio Copy Data Storage",
+        "tools": [ "C++", "OpenSSL", "GNU Tool Chain", "Visual Studio 2012" ],
+        "platforms": [ "Embedded Linux", "SLES", "RHEL", "HPUX", "AIX", "Windows 2008R2", "Windows 2012", "Solaris" ],
+        "summary" : "Sample text goes here describing the project",
+        "accomplishments" : "Text with accomplishments goes here."
+    },
+{ "title": "ECG Sensor for Cloud Analytics", "product": "CardioNebula", "tools": [ "Embedded C", "Embedded C++", "KiCAD", "nRF24L", "Logic Analyzer", "Oscilloscope", "Battery Analyzer" ], "platforms": [ "MSP430", "AVR", "ARM" ], "summary": "The product acquires data from the ECG probes and uploads to the Cloud for analytics. The Cloud Analytics attempts to detect anomalies in the input pattern and alert the doctor if required.", "contributions": "Design the hardware and ECG probe interfaces. Develop prototypes and verify the functionality. Write firmware on bare-metal and Embedded Linux Drivers Lay the PCB out and generate BOM." }
+]

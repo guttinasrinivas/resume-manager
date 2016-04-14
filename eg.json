@@ -1,0 +1,162 @@
+[
+    {
+        "category": "electronics",
+        "title": "ECG Sensor for Cloud Analytics",
+        "product": "MaNebula IoT Cloud Analytics Stack",
+        "tools": [
+            "KiCAD",
+            "nRF24L",
+            "Logic Analyzer",
+            "Oscilloscope",
+            "Battery Analyzer",
+            "Embedded C\/C++"
+        ],
+        "platforms": [
+            "MSP430",
+            "AVR",
+            "ARM"
+        ],
+        "summary": [
+            "The product acquires data from the ECG probes and uploads to the Cloud for analytics. The Cloud Analytics attempts to detect anomalies in the input pattern and alert the doctor if required."
+        ],
+        "contributions": [
+            "Design the analog frontend for ECG probes.",
+            "Design and prototype MSP430 and AVR designs for ECG probe interfaces.",
+            "Add RF frontend using nRF24L01+ designs.",
+            "Provide networking interfaces using ESP8266 WiFi bridges.",
+            "Assemble prototypes and test.",
+            "Lay the PCB out and generate BOM.",
+            "Write firmware on bare-metal and Embedded Linux Drivers."
+        ]
+    },
+    {
+        "category": "electronics",
+        "title": "Cloud Analytics framework",
+        "product": "MaNebula Stack",
+        "tools": [
+            "Python",
+            "C",
+            "Nuitka"
+        ],
+        "platforms": [
+            "Linux",
+            "Windows",
+            "Embedded Linux",
+            "AIX",
+            "Solaris",
+            "HP-UX"
+        ],
+        "summary": [
+            "The product acquires data from the ECG probes and uploads to the Cloud for analytics. The Cloud Analytics attempts to detect anomalies in the input pattern and alert the doctor if required."
+        ],
+        "contributions": [
+            "Design the hardware and ECG probe interfaces.",
+            "Develop prototypes and verify the functionality.",
+            "Write firmware on bare-metal and Embedded Linux Drivers",
+            "Lay the PCB out and generate BOM."
+        ]
+    },
+    {
+        "category": "electronics",
+        "title": "Cloud Gateway Interface",
+        "product": "MaNebula IoT Cloud Analytics Stack",
+        "tools": [
+            "KiCAD",
+            "nRF24L",
+            "Logic Analyzer",
+            "Oscilloscope",
+            "Battery Analyzer",
+            "Embedded C\/C++"
+        ],
+        "platforms": [
+            "MSP430",
+            "ARM",
+            "ESP8266"
+        ],
+        "summary": [
+            "The subsystem acts as concentrator to collect data from sensor interfaces and uploads it to the Cloud for analytics. The Cloud Analytics runs custom applications on the collected data."
+        ],
+        "contributions": [
+            "Design the interfaces between MSP430, ARM, ESP8266 and nRF24L01+.",
+            "Build prototypes on breadboards and Veroboards.",
+            "Verify designs and functionality as per specifications.",
+            "Capture schematics, lay two layer PCB out in KiCAD and generate BOM.",
+            "Write POST, drivers and firmware for bare-metal and Embedded Linux."
+        ]
+    },
+    {
+        "category": "electronics",
+        "title": "Environment Sensor IoT",
+        "product": "MaNebula IoT Cloud Analytics Stack",
+        "tools": [
+            "KiCAD",
+            "nRF24L",
+            "Logic Analyzer",
+            "Oscilloscope",
+            "Battery Analyzer",
+            "Embedded Linux",
+            "Embedded C\/C++"
+        ],
+        "platforms": [
+            "MSP430",
+            "AVR",
+            "ARM"
+        ],
+        "summary": [
+            "The environment sensor IoT provides sensor interfaces to the MaNebula's IoT Cloud Analytics stack. The sensors include moisture, temperature, humidity, TDS, strain gauges and others. "
+        ],
+        "contributions": [
+            "Gather requirements and define product specifications.",
+            "Design the analog frontends and main modules.",
+            "Battery and Solar power management modules.",
+            "Build prototypes and verify functionality as per specification.",
+            "Capture schematics, lay PCBs out in KiCAD and generate BOM.",
+            "Write POST, drivers and firmware for bare-metal and Embedded Linux."
+        ]
+    },
+    {
+        "category": "electronics",
+        "title": "Battery Profiler",
+        "product": " ",
+        "tools": [
+            "KiCAD",
+            "nRF24L",
+            "Logic Analyzer",
+            "Oscilloscope",
+            "Embedded C\/C++",
+            "Python"
+        ],
+        "platforms": [
+            "Microchip PIC",
+            "x64"
+        ],
+        "summary": [
+            "The Battery profiler is a test tool for profiling the batteries both for Solar power storage systems and consumer electronics."
+        ],
+        "contributions": [
+            "Define requirements and product specifications.",
+            "Contribute to designs.",
+            "Write firmware and user interface on Linux."
+        ]
+    },
+    {
+        "category": "electronics",
+        "title": "Power Manager",
+        "product": "AgNebula",
+        "tools": [
+            "KiCAD",
+            "Oscilloscope & Logic Analyzer"
+        ],
+        "platforms": [
+            "MSP430"
+        ],
+        "summary": [
+            "The power manager is a module designed to manage battery power for MaNebula's IoT modules. The module could take power input from Solar panels or mains input and manage batteries of various chemistries."
+        ],
+        "contributions": [
+            "Define requirements and specifications.",
+            "Provide design inputs and evaluate design choices.",
+            "Develop firmware and drivers."
+        ]
+    }
+]
