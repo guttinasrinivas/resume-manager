@@ -76,7 +76,7 @@ class DV_BlockViewBase {
     {
     }
     
-    public function render_obj($text, $lvl="", $cls="")
+    public function render_obj($text, $lvl="", $cls="", $glue=", ")
     {
         $gl_init = "";
         $gl_open = $this->glue;
@@ -90,8 +90,17 @@ class DV_BlockViewBase {
         if (is_array($text)) {
             $r_str = "";
             //$r_str .= "<ul>";
-            foreach ($text as $tent) {
-                $r_str .= "<p>{$tent}</p>";
+            $tlen = count($text);
+            for ($ii = 0; $ii < $tlen; $ii++) {
+                $tent = $text[$ii];
+                
+                if ($glue == "p") {
+                    $r_str .= "<p>{$tent}</p>";
+                } else if (($ii + 1) < $tlen ){
+                    $r_str .= "{$tent}, ";
+                } else {
+                    $r_str .= "{$tent}";
+                }
             }
             //$r_str .= "</ul>";
         }

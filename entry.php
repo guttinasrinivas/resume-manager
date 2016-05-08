@@ -53,8 +53,10 @@
     $(document).ready(function(){
         $('#btGo').click(function(event) {
             var form_data = JSON.parse($('#fmProjectEdit').serializeJSON());
+            form_data.category = $.map(form_data.category.split(","), $.trim);
             form_data.tools = $.map(form_data.tools.split(","), $.trim);
             form_data.platforms = $.map(form_data.platforms.split(","), $.trim);
+            form_data.protocols = $.map(form_data.protocols.split(","), $.trim);
             form_data.summary = form_data.summary.split("\r\n");
             form_data.contributions = form_data.contributions.split("\r\n");
             var form_json = { "data" : JSON.stringify(form_data) };
@@ -80,7 +82,11 @@
             $form_list[] = new Views\Controls\CV_ProjectEntry("category", "text");
             $form_list[] = new Views\Controls\CV_ProjectEntry("title", "text");
             $form_list[] = new Views\Controls\CV_ProjectEntry("product", "text");
+            $form_list[] = new Views\Controls\CV_ProjectEntry("start", "date");
+            $form_list[] = new Views\Controls\CV_ProjectEntry("end", "date");
+            $form_list[] = new Views\Controls\CV_ProjectEntry("organization", "text");
             $form_list[] = new Views\Controls\CV_ProjectEntry("tools", "text");
+            $form_list[] = new Views\Controls\CV_ProjectEntry("protocols", "text");
             $form_list[] = new Views\Controls\CV_ProjectEntry("platforms", "text");
             
             $fobj_summ = new Views\Controls\CV_ProjectEntry("summary", "textarea");
@@ -113,5 +119,6 @@
 	</form>
 </div>
 <div class="col-sm-1"></div>
+</div>
 </body>
 </html>

@@ -6,7 +6,7 @@
  "settings": {
   "m_runAs": 0,
   "m_phpExe": "/usr/bin/php",
-  "m_indexFile": "/home/gsjy/src/php/resume/test.php",
+  "m_indexFile": "/home/gsjy/src/php/resume/simple_test.php",
   "m_args": "",
   "m_workingDirectory": "",
   "m_projectURL": "",

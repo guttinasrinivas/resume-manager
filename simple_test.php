@@ -38,7 +38,19 @@ $pview->hdng_lvl = "h3";
 $pview->lbl_lvl = "b";
 $pview->body_lvl = "";
 
-$pview->render();
+$req_cat = "";
+if (array_key_exists("category", $_GET)) {
+    $req_cat = $_GET["category"];
+}
+
+$pview->render($req_cat);
+foreach($pview->categories as $ctg) {
+    $params = array();
+    $params["category"] = $ctg;
+    echo "<a href=\"" . $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['SERVER_NAME'];
+    echo $_SERVER['PHP_SELF'] . "?" . http_build_query($params) . "\">" . $ctg . "</a>\n";
+}
+
 $first = true;
 foreach ($pview->render_strs as $proj_block) {
     echo $proj_block;

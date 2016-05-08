@@ -7,9 +7,11 @@
             "KiCAD",
             "nRF24L",
             "Logic Analyzer",
-            "Oscilloscope",
+            "DSO",
             "Battery Analyzer",
-            "Embedded C\/C++"
+            "Embedded C\/C++",
+            "SVN",
+            "Git"
         ],
         "platforms": [
             "MSP430",
@@ -26,7 +28,7 @@
             "Provide networking interfaces using ESP8266 WiFi bridges.",
             "Assemble prototypes and test.",
             "Lay the PCB out and generate BOM.",
-            "Write firmware on bare-metal and Embedded Linux Drivers."
+            "Write firmware on both bare-metal and Embedded Linux Drivers."
         ]
     },
     {
@@ -64,9 +66,11 @@
             "KiCAD",
             "nRF24L",
             "Logic Analyzer",
-            "Oscilloscope",
+            "DSO",
             "Battery Analyzer",
-            "Embedded C\/C++"
+            "Embedded C\/C++",
+            "SVN",
+            "Git"
         ],
         "platforms": [
             "MSP430",
@@ -92,10 +96,12 @@
             "KiCAD",
             "nRF24L",
             "Logic Analyzer",
-            "Oscilloscope",
+            "DSO",
             "Battery Analyzer",
             "Embedded Linux",
-            "Embedded C\/C++"
+            "Embedded C\/C++",
+            "SVN",
+            "Git"
         ],
         "platforms": [
             "MSP430",
@@ -122,9 +128,10 @@
             "KiCAD",
             "nRF24L",
             "Logic Analyzer",
-            "Oscilloscope",
+            "DSO",
             "Embedded C\/C++",
-            "Python"
+            "Python",
+            "Git"
         ],
         "platforms": [
             "Microchip PIC",
@@ -145,7 +152,7 @@
         "product": "AgNebula",
         "tools": [
             "KiCAD",
-            "Oscilloscope & Logic Analyzer"
+            "DSO & Logic Analyzer"
         ],
         "platforms": [
             "MSP430"
@@ -157,6 +164,309 @@
             "Define requirements and specifications.",
             "Provide design inputs and evaluate design choices.",
             "Develop firmware and drivers."
+        ]
+    },
+    {
+        "category": [
+            "embedded",
+            "embedded linux"
+        ],
+        "title": "Acoustic IoT",
+        "product": "MechNebula",
+        "tools": [
+            "KiCAD",
+            "nRF24L",
+            "Logic Analyzer",
+            "DSO",
+            "Protocol Analyzer",
+            "Embedded C\/C++",
+            "Embedded Linux",
+            "SVN",
+            "Git"
+
+        ],
+        "platforms": [
+            "MSP430",
+            "AVR",
+            "ARM",
+            "x64"
+        ],
+        "summary": [
+            "The MechNebula product range offers acoustic analysis techniques to analyze uncompressed audio data from mechanical equipment for performance and potential failures. Multiple microphones provide high fidelity audio inputs at a sample rates close to 1MSpS"
+        ],
+        "contributions": [
+            "Gather requirements and prepare specifications.",
+            "Design and build prototypes.",
+            "Develop firmware for the sensor nodes.",
+            "Build Embedded Linux system images for concentrator nodes.",
+            "Research and develop statistical pattern recognition components as part of concentrator firmware."
+        ]
+    },
+    {
+        "category": [
+            "kernel",
+            "embedded",
+            "embedded linux"
+        ],
+        "title": "Power Management Drivers",
+        "product": "DAB200",
+        "tools": [
+            "Embedded C & C++",
+            "JTAG",
+            "DSO",
+            "Logic Analyzer",
+            "Git"
+        ],
+        "platforms": [
+            "RTOS",
+            "Embedded Linux"
+        ],
+        "summary": [
+            "The platform provides mutlicore embedded virutal machines for embedded systems. The provided machines are para-virtualized environments, where the peripherals are shared among the running kernels or OS images. The power manager provides a simple interface for underlying power management subsystem based upon Freescale Semiconductor components."
+        ],
+        "contributions": [
+            "Responsible for end to end development of the feature set, including gathering and specifying requirements, designing, developing, unit testing and qualifying.",
+            "Designed and developed the hypervisor device driver to provide multiple virtual interfaces.",
+            "Designed and delivered the Embedded Linux Kernel Device Driver for 2.6.3 and later 2.6.11 versions running as guests.",
+            "Designed and developed RTOS device drivers for custom realtime kernels R32S, RTK32 running as guests."
+        ]
+    },
+    {
+        "category": [
+            "embedded",
+            "embedded linux"
+        ],
+        "title": "IoT Cloud Gateway",
+        "product": "MaNebula IoT Analytics",
+        "tools": [
+            "Embedded C\/C++",
+            "Python",
+            "KiCAD",
+            "ESP8266 802.11bg",
+            "Logic Analyzer",
+            "DSO",
+            "Protocol Analyzer",
+            "SVN",
+            "Git"
+        ],
+        "platforms": [
+            "Embedded Linux",
+            "Linux",
+            "SaaS"
+        ],
+        "summary": [
+            "The cloud gateways act as node concentrators and provide interface between MaNebula's IoT nodes and the SaaS instances.  They are available in two versions: either complex data processing nodes or simple IoT Cloud gateways. The simple nodes provide direct network translation between simple IoT protocols and industry standard, secure and robust REST like SaaS API. The complex data processing nodes run Embedded Debian Linux variant to handle and provide real-time data deduplication and analytics stack utilizing local resources creating a distributed data storage and computing environment for the MaNebula Analytics SaaS."
+        ],
+        "contributions": [
+            "Responsible for the overall architecture of both the simple and data processor models across both software and hardware.",
+            "End to end ownership of the full development cycle.",
+            "Lead a team of two engineers and liaise with hardware and qualification teams.",
+            "Build prototypes and verify hardware designs either on breadboards or by soldering on Veroboards.",
+            "Develop complete software stack for bare-metal for simple and embedded Linux data processor nodes including protocol drivers for SPI, COBS, devices and interfaces."
+        ]
+    },
+    {
+        "category": [
+            "embedded",
+            "embedded linux",
+            "rtos"
+        ],
+        "title": "Smart Meter",
+        "product": "UtNebula",
+        "tools": [
+            "Embedded C & C++",
+            "Python",
+            "ESP8266 802.11bg",
+            "Logic Analyzer",
+            "DSO",
+            "Protocol Analyzer",
+            "SVN"
+        ],
+        "protocols": [
+            "SPI",
+            "COBS",
+            "802.11bg",
+            "I2C",
+            "UART"
+        ],
+        "platforms": [
+            "Embedded Linux",
+            "Linux",
+            "SaaS"
+        ],
+        "summary": [
+            "Smart Meter project is an extension to integrate current smart meters into MaNebula's utility analytics framework. The product provides data input for IoT Cloud gateways to upload smart meters' data into SaaS for analytics and reporting."
+        ],
+        "contributions": [
+            "Define requirements and design specifications.",
+            "Specify data formats and analytics requirements.",
+            "Develop IR sensors and RF gateways - hardware and firmware.",
+            "Develop translation interfaces on IoT Cloud gateways."
+        ]
+    },
+    {
+        "category": [
+            "embedded"
+        ],
+        "title": "Wearable IoT Gateway",
+        "product": "MedNebula",
+        "tools": [
+            "Embedded C & C++",
+            "KiCAD",
+            "ESP8266",
+            "Logic Analyzer",
+            "DSO",
+            "Git"
+        ],
+        "protocols": [
+            "SPI",
+            "I2C",
+            "WiFi",
+            "Bluetooth",
+            "TCP\/IP",
+            "JSON"
+        ],
+        "platforms": [
+            "MSP430",
+            "ARM",
+            "x64",
+            "Linux"
+        ],
+        "summary": [
+            "This product is a PoC for providing ECG data from probes embedded within a vest. The data is collected by a simple gateway and uploaded directly to a WiFi network or through mobile using bluetooth connectivity."
+        ],
+        "contributions": [
+            "Define requirements and specifications, plans and documentation.",
+            "Build prototypes and verify functionality.",
+            "Develop firmware for optimal power usage for the WiFi models."
+        ]
+    },
+    {
+        "category": [
+            "embedded"
+        ],
+        "title": "IoT Sensor Platform",
+        "product": "MaNebula IoT Cloud Analytics Stack",
+        "tools": [
+            "Embedded C & C++",
+            "KiCAD",
+            "nRF24L",
+            "ESP8266",
+            "Logic Analyzer",
+            "DSO",
+            "Protocol Analyzers",
+            "GNU toolchain",
+            "AVR Studio",
+            "SVN",
+            "Git"
+        ],
+        "protocols": [
+            "SPI",
+            "I2C",
+            "TCP\/IP",
+            "UART",
+            "WiFI 802.11bgn",
+            "COBS",
+            "JSON"
+        ],
+        "platforms": [
+            "MSP430",
+            "AVR",
+            "ARM",
+            "Embedded Linux",
+            "Kernel",
+            "Linux x64",
+            "ESXi & SaaS"
+        ],
+        "summary": [
+            "The platform provides the base design for the rest of the IoT modules of MaNebula stack. It consists of three variants, an ultra low power IoT Sensor Interface, a 1MSpS IoT HSS Interface and an IoT gateway."
+        ],
+        "contributions": [
+            "Define requirements, specifications and plans.",
+            "Part selection by studying datasheets, costs and availability.",
+            "Contribute to hardware designs and simulations.",
+            "Built prototypes using breadboards and soldering on Veroboards and verify functionality.",
+            "Board bring up and bootloaders.",
+            "Firmware development and device driver development.",
+            "Security designs and implementation.",
+            "Contribute to qualification and stabilization.",
+            "Define project plans and track execution.",
+            "Lead a team of 3 engineers and coordinate with other stake holders, teams and management."
+        ]
+    },
+    {
+        "category": [
+            "embedded",
+            "rtos"
+        ],
+        "title": "BMC",
+        "product": "P4 & P5 blades for Mainframes",
+        "tools": [
+            "Embedded C & C++",
+            "Forth",
+            "OpenFirmware",
+            "Device Drivers",
+            "JTAG",
+            "Rational ClearCase"
+        ],
+        "protocols": [
+            "I2C",
+            "UART",
+            "SCSI"
+        ],
+        "platforms": [
+            "H8S",
+            "RT8S RTOS",
+            "H8 Studio",
+            "PowerPC",
+            "JTAG",
+            "OpenFirmware & Linux 2.6"
+        ],
+        "summary": [
+            "The BMC is responsible for bring up and providing hardware information to the OpenFirmware to build device tree during boot up sequence. It is also responsible for overall power management and back-end diagnostics."
+        ],
+        "contributions": [
+            "Contributed to NVM, SCSI, bootloader and diagnostics feature deliverables.",
+            "Develop OpenFirmware extensions and device tree support in Forth.",
+            "Develop OpenFirmware device drivers in Forth for the BMC features.",
+            "Define specifications, qualification plans and unit testing plans.",
+            "Stabilize and verify power management functionality."
+        ]
+    },
+    {
+        "category": [
+            "embedded",
+            "rtos"
+        ],
+        "title": "AMS CableCard",
+        "product": "CableCard",
+        "tools": [
+            "Embdded C & C++",
+            "JTAG",
+            "ST20 Visual Develop",
+            "Visual Source Safe",
+            "Logic Analyzers",
+            "Protocol Analyzers and Bus Analyzers"
+        ],
+        "protocols": [
+            "I2C",
+            "SmartCard",
+            "MPEG2 TS",
+            "UART"
+        ],
+        "platforms": [
+            "ST20",
+            "OS20 RTOS"
+        ],
+        "summary": [
+            "The AMS CableCard provided advanced multi stream capabilities to Cisco's Hybrid Cable Headend and networks. Upto six simultaneous channels could be decoded, decrypted and streamed using the AMS cable card simultaneously."
+        ],
+        "contributions": [
+            "Board bring up, BIST and POST development, verification and qualification.",
+            "Boot loader development and qualification.",
+            "Device Drivers for I2C controller, NVM, SmartCard and MPEG2 BMM Controller.",
+            "OS Image builds and obfuscation.",
+            "Conditional Access Kernel and SmartCard interfaces."
         ]
     }
 ]
