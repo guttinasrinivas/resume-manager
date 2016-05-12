@@ -2,6 +2,84 @@
 
 namespace Views\Display;
 
+/* TODO Move this out to a separate file. if it works. */
+class DV_BlockDef
+{
+    public $rtype = "div";
+    public $rclass = array();
+    public $rval = null;
+    public $rlink = "";
+    
+    public function __construct($rtype, $rclass, $rtobj, $rlink="")
+    {
+        $this->rtype = $rtype;
+        $this->rclass = $rclass;
+        $this->rval = $rtobj;
+        $this->rlink = $rlink;
+        
+        return;
+    }
+    
+    private function render_subobj($tso)
+    {
+        $text = "";
+        if (method_exists($tso, "render"))
+        {
+            $text = $tso->render();
+        }
+        else if (is_string($tso))
+        {
+            $text = $tso;
+        }
+        else
+        {
+            var_dump($tso);
+            die("Invalid object type!!!");
+        }
+        
+        return $text;
+    }
+    
+    public function render()
+    {
+        $tobj = $this->rval;
+        $type= $this->rtype;
+        $rclass = $this->rclass;
+        $rlink = $this->rlink;
+        $rstrs = array();
+        $text = "";
+        
+        if (is_array($tobj))
+        {
+            foreach ($tobj as $tso)
+            {
+                $text .= $this->render_subobj($tso);
+            }
+        }
+        else
+        {
+            $text = $this->render_subobj($tobj);
+        }
+        
+        $rstrs[] = "<{$type} class=\"";
+        $rstrs[] = implode(" ", $rclass);
+        $rstrs[] = "\">";
+        
+        if ($rlink != "")
+        {
+            $rstrs[] = "<a href=\"{$rlink}\">{$text}</a>";
+        }
+        else
+        {
+            $rstrs[] = $text;
+        }
+        
+        $rstrs[] = "</{$type}>";
+        
+        return implode("", $rstrs);
+    }
+}
+
 class DV_BlockText {
     /* Tags for rendering */
     public $lbl_lvl = "b";
@@ -48,18 +126,18 @@ class DV_BlockText {
     
     public function render_text()
     {
-        $this->render_strs[] .= "<ul>";
+        $this->render_strs[] .= "<div class=\"row-padded\">";
         foreach ($this->body_text as $bt_line) {
-            $this->render_strs[] .= "<tr><td>{$bt_line}</td></tr>";
+            $this->render_strs[] .= $bt_line;
         }
-        $this->render_strs[] .= "</ul>";
+        $this->render_strs[] .= "</div>";
     }
 }
 
 class DV_BlockViewBase {
     
     /* Text levels for mark up. */
-    public $hdng_lvl = "h3";
+    public $hdng_lvl = "h1";
     public $lbl_lvl = "b";
     public $body_lvl = "";
     
@@ -82,9 +160,6 @@ class DV_BlockViewBase {
         $gl_open = $this->glue;
         $gl_close = "";
         $gl_concl = "";
-        if (is_array($this->glue)) {
-            // TODO
-        }
         
         $r_str = $text;
         if (is_array($text)) {
@@ -95,7 +170,7 @@ class DV_BlockViewBase {
                 $tent = $text[$ii];
                 
                 if ($glue == "p") {
-                    $r_str .= "<p>{$tent}</p>";
+                    $r_str .= "<div>{$tent}</div>";
                 } else if (($ii + 1) < $tlen ){
                     $r_str .= "{$tent}, ";
                 } else {
@@ -107,12 +182,12 @@ class DV_BlockViewBase {
         
         $rl_str = $r_str;
         if ($lvl != "") {
-            $rl_str = "<{$lvl}>{$r_str}</{$lvl}>";
+            $rl_str = "<{$lvl}>{$rl_str}</{$lvl}>";
         }
         
         $rlc_str = $rl_str;
         if ($cls != "") {
-            $rlc_str = "<div class=\"{$cls}\">{$rl_str}</div>";
+            $rlc_str = "<div class=\"{$cls}\">{$r_str}</div>";
         }
         
         //var_dump($rlc_str);

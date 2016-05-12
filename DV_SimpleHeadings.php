@@ -7,6 +7,8 @@ class DV_SimpleHeadings extends DV_BlockViewBase
     public $json_obj = null;
     public $categories = array();
     
+    private $talt = false;
+    
     public function __construct($json_file)
     {
         $this->rndr_strs = array();
@@ -21,6 +23,7 @@ class DV_SimpleHeadings extends DV_BlockViewBase
     {
         $cat = array();
         foreach ($this->json_obj as $block) {
+        	
             if (!is_array($block->category)) {
                 $cat[] = $block->category;
             } else {
@@ -39,14 +42,23 @@ class DV_SimpleHeadings extends DV_BlockViewBase
                 }
             }
 
+            /* TODO Tightly integrated, move integration out to caller */
+            $hd_blk = "";
+            $txt_blk = "";
             foreach ($block as $key => $elm) {
+            	
                 if ($key == "category") {
                     continue;
                 } else if ($key == "title") {
-                    //$this->add_proj($cat, $elm);
-                    $this->render_strs[] = "</table>";
-                    $this->render_heading($elm);
-                    $this->render_strs[] = "<table>";
+                    /* Wrap up previous view box. */
+                    $this->render_strs[] = $this->render_block($hd_blk, $txt_blk);
+                    $txt_blk = "";
+                    
+                    /* Start new view box. */
+                    $hd_blk = $this->render_heading($elm);
+                    $this->render_strs[] = $hd_blk;
+                    $this->render_strs[] = "<div class=\"panel-content\">";
+                    //$this->render_strs[] = "<div>";
                 } else {
                     if (($key == "tools") ||
                         ($key == "platforms")) {
@@ -54,9 +66,13 @@ class DV_SimpleHeadings extends DV_BlockViewBase
                     } else {
                         $this->glue = "<br />";
                     }
-                    $this->render_text($key, $elm);
+                    $txt_blk .= $this->render_text($key, $elm);
                 }
             }
+            
+            /* Wrap up last view box. */
+            $this->render_strs[] = $this->render_block($hd_blk, $txt_blk);
+            $txt_blk = "";
         }
 
         return($this->render_strs);
@@ -64,23 +80,29 @@ class DV_SimpleHeadings extends DV_BlockViewBase
     
     public function render_heading($text)
     {
-        $r_str = $this->render_obj($text, $this->hdng_lvl, $this->hdng_class);
-        $this->render_strs[] = "<p>{$r_str}</p>\n";
+        $dobj = $text;
+        $dobj = new DV_BlockDef("h1", array("panel-title"), $dobj);
+        $dobj = new DV_BlockDef("div", array("panel-heading"), $dobj);
+        
+        $r_str = $dobj->render();
+        return $r_str;
     }
     
     private function render_text($key, $text)
     {
-        $r_str = "<tr><td class=\"label\">";
-        $r_str .= $this->render_obj(ucwords($key), $this->lbl_lvl, $this->lbl_class);
-        $r_str .= ": ";
-        $r_str .= "</td>";
+        $r_out = array();
+        $r_str = $this->render_obj(ucwords($key . ": "), "b", $this->lbl_class);
+        $r_out[] = new DV_BlockDef("div", array("col-sm-2"), $r_str);
+        $r_str = null;
         
         $glue = $this->get_glue_type($text);
         
-        $r_str .= "<td class=\"text\">";
-        $r_str .= $this->render_obj($text, $this->body_lvl, $this->body_class, $glue);
-        $r_str .= "</td></tr>";
-        $this->render_strs[] = "{$r_str}\n";
+        $r_str = $this->render_obj($text, "", $this->body_class, $glue);
+        $r_out[] = new DV_BlockDef("div", array("col-sm-10"), $r_str);
+
+        $r_str = new DV_BlockDef("div", array("row", "row-padded"), $r_out);
+        $ret = $r_str->render() . "\n";
+        return $ret;
     }
     
     private function get_glue_type($text)
@@ -115,6 +137,22 @@ class DV_SimpleHeadings extends DV_BlockViewBase
             
             $this->categories[$ctg][] = $prj;
         }
+    }
+    
+    private function render_block($hd_blk, $txt_blk)
+    {
+    	if (($hd_blk == "") &&
+    		($txt_blk == ""))
+    	{
+    		return "";
+    	}
+    	
+    	$txt_view = new DV_BlockDef("div", array("panel-content"),
+    			$txt_blk);
+    	$blk_view = new DV_BlockDef("div", array("panel", "panel-default"),
+    			$hd_blk . $txt_view->render());
+    	
+    	return $blk_view->render();
     }
     
 }

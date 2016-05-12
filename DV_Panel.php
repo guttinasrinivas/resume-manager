@@ -3,8 +3,22 @@
 namespace Views\Display;
 
 class DV_Panel {
+    
+    public $mclass = array("nav", "navbar-nav");
+    public $menu = array();
 
-    public function __construct() {
+    public function add_menu($text, $link)
+    {
+        $ment_o = new DV_BlockDef("li", array(""), $text, $link);
+        $this->menu[] = $ment_o->render();
+    }
+    
+    public function render()
+    {
+        $robj = new DV_BlockDef("ul", $this->mclass, implode("\n", $this->menu));
+        $rstr = $robj->render();
+        //var_dump($rstr);
+        return $rstr;
     }
     
 /*
