@@ -1,6 +1,6 @@
 <?php
 
-namespace Views\Display;
+require_once 'DV_BlockViewBase.php';
 
 class DV_SimpleHeadings extends DV_BlockViewBase
 {
@@ -56,9 +56,6 @@ class DV_SimpleHeadings extends DV_BlockViewBase
                     
                     /* Start new view box. */
                     $hd_blk = $this->render_heading($elm);
-                    $this->render_strs[] = $hd_blk;
-                    $this->render_strs[] = "<div class=\"panel-content\">";
-                    //$this->render_strs[] = "<div>";
                 } else {
                     if (($key == "tools") ||
                         ($key == "platforms")) {

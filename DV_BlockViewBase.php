@@ -1,7 +1,5 @@
 <?php
 
-namespace Views\Display;
-
 /* TODO Move this out to a separate file. if it works. */
 class DV_BlockDef
 {
@@ -61,7 +59,7 @@ class DV_BlockDef
             $text = $this->render_subobj($tobj);
         }
         
-        $rstrs[] = "<{$type} class=\"";
+        $rstrs[] = "\n<{$type} class=\"";
         $rstrs[] = implode(" ", $rclass);
         $rstrs[] = "\">";
         
@@ -74,7 +72,7 @@ class DV_BlockDef
             $rstrs[] = $text;
         }
         
-        $rstrs[] = "</{$type}>";
+        $rstrs[] = "</{$type}>\n";
         
         return implode("", $rstrs);
     }

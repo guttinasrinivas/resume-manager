@@ -1,7 +1,5 @@
 <?php
 
-namespace Views\Display;
-
 class DV_Panel {
     
     public $mclass = array("nav", "navbar-nav");

@@ -80,7 +80,7 @@ echo '<nav class="navbar navbar-inverse navbar-fixed-top">
         </div>
         <div id="navbar" class="navbar-collapse collapse">';
 
-$pview = new Views\Display\DV_SimpleHeadings('eg.json');
+$pview = new DV_SimpleHeadings('eg.json');
 
 $use_theme = false;
 if ($use_theme)
@@ -107,7 +107,7 @@ if (array_key_exists("category", $_GET)) {
 $pview->render($req_cat);
 
 # Build menus
-$cat = new Views\Display\DV_Panel();
+$cat = new DV_Panel();
 $link = $_SERVER['REQUEST_SCHEME'];
 $link .= "://" . $_SERVER['SERVER_NAME'];
 $link .= $_SERVER['PHP_SELF'];

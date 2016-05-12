@@ -1,7 +1,5 @@
 <?php
 
-namespace Views\Display;
-
 require_once('DV_BlockViewBase.php');
 
 class ProjectView {
